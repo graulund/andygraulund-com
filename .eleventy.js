@@ -8,9 +8,10 @@ module.exports = function(eleventyConfig) {
 		files: "./public/css/**/*.css"
 	});
 
+	// Sort sections by file name (`fileSlug`)
 	eleventyConfig.addCollection("sortedSections", function(collectionApi) {
-		// Sort by file name (`fileSlug`)
 		const sections = collectionApi.getFilteredByTag("sections");
+
 		return [...sections].sort((a, b) => {
 			return a.fileSlug.localeCompare(b.fileSlug);
 		});
@@ -35,8 +36,8 @@ module.exports = function(eleventyConfig) {
 			.replace(/\.\.\./g, "…");
 	});
 
-	eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-		// Eleventy 1.0+: use this.inputPath and this.outputPath instead
+	// https://www.11ty.dev/docs/config/#transforms-example-minify-html-output
+	eleventyConfig.addTransform("htmlmin", function(content) {
 		if (this.outputPath && this.outputPath.endsWith(".html")) {
 			const minified = htmlmin.minify(content, {
 				useShortDoctype: true,
@@ -55,5 +56,5 @@ module.exports = function(eleventyConfig) {
 			input: "src",
 			output: "public"
 		}
-	}
+	};
 };
