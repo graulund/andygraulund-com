@@ -62,6 +62,12 @@
 					progressEl.style.strokeDashoffset = (1 - percent) * circumference;
 				});
 
+				player.on("pause", function(data) {
+					// Fix glitch on mobile device where the player will automatically
+					// pause after full screen
+					player.play();
+				});
+
 				// Handle custom fullscreen button click/tap
 				fullscreenBtnEl.addEventListener("click", function() {
 					player.requestFullscreen();
