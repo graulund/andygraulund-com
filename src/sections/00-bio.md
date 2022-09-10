@@ -6,7 +6,7 @@ Hi! I’m Andy! I basically grew up with the internet, and have been doing web d
 
 I’m a frontend/UI developer by trade, sitting between the hard tech and the design, loving every bit of it.
 
-* 10+ years of web development and experience, specializing in frontend and UI
+* 10+ years of development experience, specializing in frontend and UI
 * Extensive design and UX experience
 * Worked on products that have been seen and used by hundreds of thousands of people
 * Very independent, highly solution oriented, and highly motivated
