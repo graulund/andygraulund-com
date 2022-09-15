@@ -24,7 +24,7 @@ The project uses Model/View/Controller, Service/Repository, and PSR-4 modern bac
 	<figcaption>Demo of an interactive chart: This shows the number of times big tracks by The Weekend were played on a major Danish radio channel per day over a very prolific winter for the artist. Move your mouse over the titles to highlight a specific track</figcaption>
 </figure>
 
-In order to display a visualization of the amount of times per day I have played a certain song, I created my own simple charting framework that creates area charts. I know, I know — there's already a ridiculous amount of JavaScript charting frameworks out there. However, I had a hard time finding one that did exactly what I wanted to, and wasn't overly complicated. So I made my own tiny framework in React and SVG. Small, sleek, to the point.
+In order to display a visualization of the amount of times per day I have played a certain song, I created my own simple charting framework that creates area charts. I know, I know — there's already a ridiculous amount of JavaScript charting frameworks out there. However, I had a hard time finding one that did exactly what I wanted to, and wasn't overly complicated. So I made my own tiny framework in TypeScript, React and SVG. Small, sleek, to the point.
 
 ### Fretboard
 
