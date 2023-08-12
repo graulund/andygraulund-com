@@ -1,6 +1,6 @@
 <img class="figure figure-epjb" src="{{ '/assets/gtgg-screenshot.png' | url }}" width="200" alt="Screenshot of product" />
 
-## As part of my Twitch streaming hobby, I devised a web app that communicates with APIs to create a seemless game queueing experience
+## As part of my Twitch streaming hobby, I devised a web app that communicates with APIs to create a seamless game queueing experience
 
 <p class="meta">2021</p>
 
