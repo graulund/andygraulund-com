@@ -1,5 +1,4 @@
-
-<img src="{{ '/assets/gtgg-screenshot.png' | url }}" width="200" alt="Screenshot of product" style="float:left; margin: 0 1.5rem 0 -14rem" />
+<img class="figure figure-epjb" src="{{ '/assets/gtgg-screenshot.png' | url }}" width="200" alt="Screenshot of product" />
 
 ## As part of my Twitch streaming hobby, I devised a web app that communicates with APIs to create a seemless game queueing experience
 

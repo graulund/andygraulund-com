@@ -2,25 +2,7 @@
 
 <p class="meta">2017–2019</p>
 
-<style>
-	#clip-manager-thingy {
-		float: left;
-		position: relative;
-		margin: 0 1.5rem 0 -14rem;
-		width: 27rem;
-		height: 24rem;
-	}
-
-	#clip-manager-thingy .clip-manager-video {
-		position: absolute;
-		top: 9.5rem;
-		left: 3rem;
-		width: 24rem;
-		box-shadow: 0 0 1rem rgba(37, 36, 48, .75);
-	}
-</style>
-
-<div id="clip-manager-thingy">
+<div class="figure figure-clip-manager">
 	<img src="{{ '/assets/clip-manager-dev.jpg' | url }}" width="384" alt="Screenshot of development"/>
 <div class="clip-manager-video">
 <div class="vimeo-container" style="padding-top:59.05%"><iframe src="https://player.vimeo.com/video/854026412?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>

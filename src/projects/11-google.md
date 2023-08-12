@@ -1,4 +1,4 @@
-<img src="{{ '/assets/gflights-screenshot.png' | url }}" width="220" alt="Screenshot of pricing list from Google Flights" style="float: left; margin: 0 1.5rem 0 -12rem">
+<img class="figure figure-google" src="{{ '/assets/gflights-screenshot.png' | url }}" width="220" alt="Screenshot of pricing list from Google Flights" />
 
 ## At Google, I helped develop Google Flights Search as an intern
 

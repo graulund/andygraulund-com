@@ -1,4 +1,4 @@
-<img src="{{ '/assets/superdAmn-screenshot.png' | url }}" width="420" alt="Screenshot of browser extension in use" style="float: right; margin: 0 -12rem 0 1.5rem">
+<img class="figure figure-superdamn" src="{{ '/assets/superdAmn-screenshot.png' | url }}" width="420" alt="Screenshot of browser extension in use" />
 
 ## I created a most used browser plugin for DeviantArt chatters in my free time, and ended up with a job
 

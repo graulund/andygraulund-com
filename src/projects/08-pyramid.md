@@ -1,4 +1,4 @@
-<div style="float: right; margin: 0 -12rem 1.5rem 1.5rem; width: 25rem;">
+<div class="figure figure-pyramid">
 <div class="vimeo-container" style="padding-top:79.82%"><iframe src="https://player.vimeo.com/video/854008926?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
 </div>
 

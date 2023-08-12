@@ -1,4 +1,4 @@
-<img src="{{ '/assets/pc-klinik-2009.JPG' | url }}" width="350" alt="Picture of product in use" style="float: left; margin: .5rem 1.5rem 1.5rem -12rem">
+<img class="figure figure-pc-klinik" src="{{ '/assets/pc-klinik-2009.JPG' | url }}" width="350" alt="Picture of product in use" />
 
 ## At my first job as a teenager, I created a digital system to speed up customer service
 

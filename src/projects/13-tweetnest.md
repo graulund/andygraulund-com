@@ -1,6 +1,6 @@
 ## When Twitter was limiting your ability to see your own old tweets, I created an open source tweet archiving tool called Tweet Nest
 
-<img src="{{ '/assets/TweetNestShot.png' | url }}" alt="Product promotion screenshot" style="float: left; margin: 0 1.5rem 1.5rem -12rem; width: 20rem;" />
+<img class="figure figure-tweetnest" src="{{ '/assets/TweetNestShot.png' | url }}" width="320" alt="Product promotion screenshot" />
 
 <p class="meta">2010</p>
 

@@ -77,7 +77,7 @@ a:hover {
 }
 
 .header-inner {
-	display: flex;
+	// display: flex;
 }
 
 .face {
@@ -236,6 +236,39 @@ ul {
 	margin: -.75rem 0 1.125rem;
 }
 
+// TODO: Maybe actually use figure?
+
+.figure {
+	margin: 0 0 2rem;
+}
+
+.figure-clip-manager {
+	position: relative;
+	height: 24rem;
+
+	.clip-manager-video {
+		position: absolute;
+		top: 9.5rem;
+		left: 3rem;
+		width: 24rem;
+		box-shadow: 0 0 1rem rgba(37, 36, 48, .75);
+	}
+}
+
+.figure-screenshot-roll {
+	overflow-x: scroll;
+
+	> div {
+		display: flex;
+		width: 61.25rem;
+	}
+
+	img {
+		flex: 0 0 25%;
+		width: 25%;
+	}
+}
+
 figure {
 	margin: 0;
 }
@@ -261,6 +294,7 @@ noscript {
 
 @media (min-width: ($mobile-width + 1)) {
 	.header-inner, .footer-inner {
+		display: flex;
 		// margin-left: 12rem;
 	}
 
@@ -289,6 +323,94 @@ noscript {
 			margin-right: 12rem;
 			margin-left: 0;
 		}
+	}
+
+	.figure {
+		margin: 0;
+	}
+
+	.figure-dr-lyd {
+		float: right;
+		margin: -1.5rem -14rem 0 1.5rem;
+		width: 36rem;
+	}
+
+	.figure-elections {
+		float: left;
+		margin: 0 1.5rem 1.5rem -12rem;
+		width: 36rem;
+	}
+
+	.figure-charts {
+		width: 60rem;
+		margin-right: -12rem;
+	}
+
+	.figure-epjb {
+		float: left;
+		margin: 0 1.5rem 0 -14rem;
+	}
+
+	.figure-fretboard {
+		margin-right: -12rem;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.figure-keys {
+		margin-left: -12rem;
+	}
+
+	.figure-newsapp {
+		float: right;
+		margin: 0 -12rem 0 1.5rem;
+		width: 19rem;
+	}
+
+	.figure-clip-manager {
+		float: left;
+		position: relative;
+		margin: 0 1.5rem 0 -14rem;
+		width: 27rem;
+		height: 24rem;
+	}
+
+	.figure-pyramid {
+		float: right;
+		margin: 0 -12rem 1.5rem 1.5rem;
+		width: 25rem;
+	}
+
+	.figure-graphjs {
+		float: left;
+		margin: 0 1.5rem 0 -12rem;
+	}
+
+	.figure-screenshot-roll {
+		overflow-x: auto;
+		margin: 0 -12.625rem 0 -.625rem;
+	}
+
+	.figure-google {
+		float: left;
+		margin: 0 1.5rem 0 -12rem;
+	}
+
+	.figure-tweetnest {
+		float: left;
+		margin: 0 1.5rem 1.5rem -12rem;
+	}
+
+	.figure-superdamn {
+		float: right;
+		margin: 0 -12rem 0 1.5rem;
+	}
+
+	.figure-pc-klinik {
+		float: left;
+		margin: .5rem 1.5rem 1.5rem -12rem;
 	}
 }
 

@@ -2,7 +2,7 @@
 
 <p class="meta">2022</p>
 
-<figure style="width: 60rem; margin-right: -12rem">
+<figure class="figure-charts">
 	<div class="andy-chart-root">
 		<noscript>Here is an area chart. Turn on JavaScript to see the chart</noscript>
 	</div>

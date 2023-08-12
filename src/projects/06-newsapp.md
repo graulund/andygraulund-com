@@ -1,4 +1,4 @@
-<div style="float: right; margin: 0 -12rem 0 1.5rem; width: 19rem;">
+<div class="figure figure-newsapp">
 <div class="vimeo-container" style="padding-top:181.03%"><iframe src="https://player.vimeo.com/video/854013767?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
 </div>
 
