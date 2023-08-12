@@ -1,6 +1,8 @@
 ## I'm currently the lead engineer for the website for radio and podcasts by the Danish Broadcast Corporation
 
-<video src="{{ '/assets/Andy CV DR Lyd 2023 cropped.mp4' | url }}" loop muted autoplay style="float: right; margin: -1.5rem -14rem 0 1.5rem; width: 36rem;"></video>
+<div style="float: right; margin: -1.5rem -14rem 0 1.5rem; width: 36rem;">
+<div style="padding:71.16% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/854012013?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+</div>
 
 <p class="meta">2020–present</p>
 

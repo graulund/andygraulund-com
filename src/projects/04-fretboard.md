@@ -6,7 +6,6 @@
 	<img src="{{ '/assets/fretboard-screenshot.png' | url }}" alt="Screenshot of product" style="width: 100%" />
 </div>
 
-
 <!--
 I wanted to learn the guitar, but the fretboard on a guitar is pretty daunting to someone new — so many places where you can place your fingertip, and not be aware exactly what's going to happen. As someone who already knows a bit of music theory, I was curious exactly how the various pitches mapped onto the fretboard.
 
