@@ -3,7 +3,7 @@
 <p class="meta">2015, 2017, 2019, 2021, 2022</p>
 
 <div style="float: left; margin: 0 1.5rem 1.5rem -12rem; width: 36rem;">
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/854011040?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+<div class="vimeo-container"><iframe src="https://player.vimeo.com/video/854011040?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
 </div>
 
 One of the most critical missions of the Danish Broadcasting Corporation is the coverage of national elections. The **communication of democracy** needs to be clear and effective. That's why I'm honored to have been part of this vital product for several elections.

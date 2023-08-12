@@ -23,7 +23,7 @@
 <div id="clip-manager-thingy">
 	<img src="{{ '/assets/clip-manager-dev.jpg' | url }}" width="384" alt="Screenshot of development"/>
 <div class="clip-manager-video">
-<div style="padding:59.05% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/854026412?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+<div class="vimeo-container" style="padding-top:59.05%"><iframe src="https://player.vimeo.com/video/854026412?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
 </div>
 </div>
 
