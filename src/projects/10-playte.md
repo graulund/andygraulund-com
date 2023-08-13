@@ -4,10 +4,10 @@
 
 <div class="figure figure-screenshot-roll">
 	<div>
-		<img src="{{ '/assets/playte/0.png' | url }}" alt="" />
-		<img src="{{ '/assets/playte/1.png' | url }}" alt="" />
-		<img src="{{ '/assets/playte/2.png' | url }}" alt="" />
-		<img src="{{ '/assets/playte/3.png' | url }}" alt="" />
+		<img src="{{ '/assets/playte/0.png' | url }}" alt="Screenshot of all-time most played tracks" />
+		<img src="{{ '/assets/playte/1.png' | url }}" alt="Screenshot of most played in February 2023" />
+		<img src="{{ '/assets/playte/2.png' | url }}" alt="Screenshot of playlist generator interface" />
+		<img src="{{ '/assets/playte/3.png' | url }}" alt="Screenshot of track page for &#8220;Flowers&#8221; by Miley Cyrus" />
 	</div>
 </div>
 

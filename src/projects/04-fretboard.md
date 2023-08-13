@@ -3,7 +3,7 @@
 <p class="meta">2019</p>
 
 <div class="figure figure-fretboard">
-	<img src="{{ '/assets/fretboard-screenshot.png' | url }}" alt="Screenshot of product" style="width: 100%" />
+	<img src="{{ '/assets/fretboard-screenshot.png' | url }}" alt="Screenshot of digital fretboard" style="width: 100%" />
 </div>
 
 <!--
