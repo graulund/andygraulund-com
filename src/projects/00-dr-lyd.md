@@ -6,12 +6,8 @@
 
 <p class="meta">2020–present</p>
 
-I am the lead software engineer on the Danish Broadcasting Corporation's **[DR&nbsp;Lyd](https://www.dr.dk/lyd)**, the website on which you can listen to live radio and podcast episodes. I oversaw and executed a transition from the previous older website to a modern Next.js/React-powered stack that **integrated well with the rest of the organization's technology.** I also implemented a custom HLS.js player used in the project.
+I am the lead software engineer on the Danish Broadcasting Corporation's **[DR&nbsp;Lyd](https://www.dr.dk/lyd)**, the website on which you can listen to live radio and podcasts. I oversaw and executed a transition from the previous older website to **a modern Next.js/React-powered stack** that integrated well with the rest of the organization's technology.
 
-I was an integral part of every technical decision as part of the project, from the very beginning to where it is today. It was a trailblazer; its success and stability made it the **first of many Next.js solutions** in the company. A large-scale combination of interface code, audio/video player code, a Node backend with deep integrations towards the rest of the organization, it was arguably one of the **most complex technical initiatives** driven by a single person within the company.
+I authored nearly every line of code in the project: Interface code, audio/video player code, and a Node backend with integrations towards our APIs. Its success and stability made it the **first of many Next.js solutions** in the company. The product is key to the company mission in a space that is increasingly saturated by big budget competitors.
 
-The success of the product created highly satisfied users, increased performance and reliability, and was key to the company mission in a space that is increasingly saturated by big budget competitors.
-
-During this project, I was part of the process of hiring a junior software engineer and bringing them onto the team. It's been a joy to **help develop internal talent** and growing another engineer, communicating central ideas such as modularizations, debuggability and reusability.
-
-<!-- Engineering metrics: developer experience, developer velocity, debuggability, performance, and reliability -->
+As part of the project, we brought on a junior software engineer that I am a mentor for. It's been a joy to help develop internal talent, communicating central ideas such as modularizations, debuggability and reusability.

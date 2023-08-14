@@ -48,6 +48,7 @@ h1 {
 	line-height: 1.25em;
 	font-weight: normal;
 	color: var(--color-foreground);
+	margin: .75rem 0 1.25rem;
 
 	strong {
 		color: var(--color-level-1);
@@ -110,7 +111,7 @@ header {
 		font-size: 1.75rem;
 		color: var(--color-level-2);
 		line-height: 1.25em;
-		margin: 1rem 0 0;
+		margin: 1rem 0;
 
 		strong {
 			color: var(--color-level-1);
@@ -254,6 +255,19 @@ ul {
 	margin: 0 0 2rem;
 }
 
+.figure-charts {
+	@media (max-width: $mobile-width) {
+		width: calc(100% + 5rem);
+		margin: 0 -2.5rem;
+	}
+
+	figcaption {
+		@media (max-width: $mobile-width) {
+			margin: 0 2.5rem;
+		}
+	}
+}
+
 .figure-clip-manager {
 	position: relative;
 	max-width: 24rem;
@@ -286,9 +300,18 @@ ul {
 .figure-screenshot-roll {
 	overflow-x: scroll;
 
+	@media (max-width: $mobile-width) {
+		width: calc(100% + 5rem);
+		margin: 0 -2.5rem;
+	}
+
 	> div {
 		display: flex;
 		width: 61.25rem;
+
+		@media (max-width: $mobile-width) {
+			margin: 0 1.875rem;
+		}
 	}
 
 	img {
@@ -350,14 +373,38 @@ noscript {
 	}
 }
 
-@media (min-width: ($mobile-width + 1)) {
-	.header-inner, .footer-inner {
-		display: flex;
-		// margin-left: 12rem;
+@media (max-width: $mobile-width) {
+	.figure-non-main {
+		display: none;
 	}
 
-	.fanfare {
-		font-size: 3rem;
+	.figure-main {
+		display: block;
+	}
+}
+
+@media (min-width: ($mobile-width + 1)) {
+	.header-inner {
+		display: flex;
+	}
+
+	.footer-inner {
+		margin-left: 12rem;
+	}
+
+	.figure-main {
+		display: none;
+	}
+
+	header {
+		.fanfare {
+			font-size: 2rem;
+			margin: 1.25rem 0;
+		}
+
+		.title {
+			font-size: 1.125rem;
+		}
 	}
 
 	.section {
@@ -410,7 +457,7 @@ noscript {
 	}
 
 	.figure-charts {
-		width: 60rem;
+		max-width: 60rem;
 		margin-right: -12rem;
 	}
 
@@ -443,6 +490,7 @@ noscript {
 		margin: 0 1.5rem 0 -14rem;
 		// width: 27rem;
 		// height: 24rem;
+		overflow: hidden;
 	}
 
 	.figure-pyramid {
@@ -463,7 +511,7 @@ noscript {
 
 	.figure-google {
 		float: left;
-		margin: 0 1.5rem 0 -12rem;
+		margin: 0 1.5rem 1.5rem -12rem;
 	}
 
 	.figure-tweetnest {
