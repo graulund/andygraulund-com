@@ -2,6 +2,20 @@
 layout: "base.njk"
 ---
 
+<!--
+<div class="container">
+	<h2>Here's some of the things I've worked on!</h2>
+</div> -->
+
+<div class="portfolio container">
+	{% for project in collections.sortedProjects %}
+		<div class="portfolio-item">
+			{{ project.templateContent | smartquotes | safe }}
+		</div>
+	{% endfor %}
+</div>
+
+
 {% for section in collections.sortedSections %}
 	<div class="content-segment">
 		<div class="container">

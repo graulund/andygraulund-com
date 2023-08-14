@@ -17,6 +17,14 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.addCollection("sortedProjects", function(collectionApi) {
+		const projects = collectionApi.getFilteredByTag("projects");
+
+		return [...projects].sort((a, b) => {
+			return a.fileSlug.localeCompare(b.fileSlug);
+		});
+	});
+
 	// Thanks, https://charliepark.org/smartquotes_in_eleventy/
 	eleventyConfig.addFilter("smartquotes", (post) => {
 		const hawaii = new RegExp(/(?<=<(h|l|p[^r]).*)Hawai'i/g);

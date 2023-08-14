@@ -133,3 +133,4 @@ dist
 .DS_Store
 public/
 src/assets/andys-charts/
+src/assets/*.mp4

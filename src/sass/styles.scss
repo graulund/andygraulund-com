@@ -6,11 +6,11 @@ $mobile-width: 600px;
 	// --color-background: #1a1922;
 	--color-background: #252430;
 	--color-background-secondary: #0f0f14;
-	--color-foreground: #aab; // #99a
 	--color-level-1: #fff;
 	--color-level-2: #ccd;
-	--color-level-3: var(--color-foreground);
+	--color-level-3: #aab; // #99a
 	--color-level-4: #889;
+	--color-foreground: var(--color-level-3);
 	--color-video-overlay-bg: rgba(0,0,0,.5);
 	--color-video-overlay-bg-over: rgba(0,0,0,.75);
 	--color-video-overlay-fg: #fff;
@@ -19,11 +19,12 @@ $mobile-width: 600px;
 @media (prefers-contrast: more) {
 	:root {
 		--color-foreground: var(--color-level-2);
+		--color-level-4: var(--color-level-3);
 	}
 }
 
 body {
-	margin: 5rem 0 10rem;
+	margin: 4rem 0 10rem;
 	background-color: var(--color-background);
 	color: var(--color-foreground);
 	font-size: 1rem;
@@ -40,6 +41,18 @@ body {
 
 h1, h2, h3 {
 	color: var(--color-level-1);
+}
+
+h1 {
+	font-size: 2rem;
+	line-height: 1.25em;
+	font-weight: normal;
+	color: var(--color-foreground);
+	margin: .75rem 0 1.25rem;
+
+	strong {
+		color: var(--color-level-1);
+	}
 }
 
 h2 {
@@ -60,26 +73,49 @@ strong, a {
 	color: var(--color-level-2);
 }
 
-a:hover {
+a {
+	padding: 1px 0;
 	text-decoration: underline;
+}
+
+a:hover {
+	background-color: var(--color-background-secondary);
+}
+
+code {
+	font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+	background-color: var(--color-background-secondary);
+	padding: 1px 6px;
+	border-radius: 12px;
+}
+
+.header-inner {
+	// display: flex;
 }
 
 .face {
 	width: 10rem;
 	height: 10rem;
 	border-radius: 100%;
+	margin: 0 2rem 0 0;
 }
 
 header {
-	margin: 0 0 5rem;
+	margin: 0 0 4rem;
 
 	@media (max-width: $mobile-width) {
 		margin-bottom: 2.5rem;
 	}
 
 	.fanfare {
-		font-size: 1.25rem;
+		font-size: 1.75rem;
 		color: var(--color-level-2);
+		line-height: 1.25em;
+		margin: 1rem 0;
+
+		strong {
+			color: var(--color-level-1);
+		}
 	}
 }
 
@@ -115,10 +151,20 @@ ul {
 	}
 }
 
+.video {
+	background-color: var(--color-background-secondary);
+}
+
+.video-inner {
+	max-height: 60vh;
+	width: calc(60vh / 0.5625);
+	margin: 0 auto;
+}
+
 .vimeo-container {
 	position: relative;
 	padding-top: 56.25%;
-	margin: 1rem 0;
+	// margin: 1rem 0;
 
 	@media (max-width: $mobile-width) {
 		width: calc(100% + 5rem);
@@ -203,6 +249,97 @@ ul {
 	margin: -.75rem 0 1.125rem;
 }
 
+// TODO: Maybe actually use figure?
+
+.figure {
+	margin: 0 0 2rem;
+}
+
+.figure-charts {
+	@media (max-width: $mobile-width) {
+		width: calc(100% + 5rem);
+		margin: 0 -2.5rem;
+	}
+
+	figcaption {
+		@media (max-width: $mobile-width) {
+			margin: 0 2.5rem;
+		}
+	}
+}
+
+.figure-clip-manager {
+	position: relative;
+	max-width: 24rem;
+	// height: 23.5rem;
+	/* height: 0;
+	padding-top: 87.03%;
+	max-width: 27rem;
+
+	> img {
+		position: absolute;
+		top: 0;
+		left: 0;
+	} */
+
+	> img {
+		width: 100%;
+	}
+
+	padding: 0 7% 12.9% 0;
+
+	.clip-manager-video {
+		position: absolute;
+		top: 40%;
+		left: 12.5%;
+		width: 87.73%;
+		box-shadow: 0 0 1rem rgba(37, 36, 48, .75);
+	}
+}
+
+.figure-screenshot-roll {
+	overflow-x: scroll;
+
+	@media (max-width: $mobile-width) {
+		width: calc(100% + 5rem);
+		margin: 0 -2.5rem;
+	}
+
+	> div {
+		display: flex;
+		width: 61.25rem;
+
+		@media (max-width: $mobile-width) {
+			margin: 0 1.875rem;
+		}
+	}
+
+	img {
+		flex: 0 0 25%;
+		width: 25%;
+	}
+}
+
+.figure-graphjs {
+	width: 100%;
+	max-width: 17.5rem;
+}
+
+.figure-tweetnest {
+	width: 100%;
+	max-width: 20rem;
+}
+
+.figure-superdamn {
+	width: 100%;
+	max-width: 26.25rem;
+}
+
+.figure-pc-klinik {
+	width: 100%;
+	max-width: 21.875rem;
+}
+
 figure {
 	margin: 0;
 }
@@ -226,9 +363,48 @@ noscript {
 	margin: 2rem 0 0;
 }
 
+// Needs cleanup
+
+.portfolio {
+	h2 {
+		font-size: 1.5rem;
+		line-height: 1.4em;
+		margin: 4rem 0 2rem;
+	}
+}
+
+@media (max-width: $mobile-width) {
+	.figure-non-main {
+		display: none;
+	}
+
+	.figure-main {
+		display: block;
+	}
+}
+
 @media (min-width: ($mobile-width + 1)) {
-	.header-inner, .footer-inner {
+	.header-inner {
+		display: flex;
+	}
+
+	.footer-inner {
 		margin-left: 12rem;
+	}
+
+	.figure-main {
+		display: none;
+	}
+
+	header {
+		.fanfare {
+			font-size: 2.5rem;
+			margin: 1.25rem 0;
+		}
+
+		.title {
+			font-size: 1.125rem;
+		}
 	}
 
 	.section {
@@ -247,5 +423,109 @@ noscript {
 		&-body {
 			flex: 1 0 0px;
 		}
+	}
+
+	.portfolio {
+		h2 {
+			font-size: 2rem;
+		}
+	}
+
+	.portfolio-item {
+		margin-left: 12rem;
+
+		&:nth-child(odd) {
+			margin-right: 12rem;
+			margin-left: 0;
+		}
+	}
+
+	.figure {
+		margin: 0;
+	}
+
+	.figure-dr-lyd {
+		float: right;
+		margin: -1.5rem -14rem 0 1.5rem;
+		width: 36rem;
+	}
+
+	.figure-elections {
+		float: left;
+		margin: 0 1.5rem 1.5rem -12rem;
+		width: 36rem;
+	}
+
+	.figure-charts {
+		max-width: 60rem;
+		margin-right: -12rem;
+	}
+
+	.figure-epjb {
+		float: left;
+		margin: 0 1.5rem 0 -14rem;
+	}
+
+	.figure-fretboard {
+		margin-right: -12rem;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.figure-keys {
+		margin-left: -12rem;
+	}
+
+	.figure-newsapp {
+		float: right;
+		margin: 0 -12rem 0 1.5rem;
+		width: 19rem;
+	}
+
+	.figure-clip-manager {
+		float: left;
+		position: relative;
+		margin: 0 1.5rem 0 -14rem;
+		// width: 27rem;
+		// height: 24rem;
+		overflow: hidden;
+	}
+
+	.figure-pyramid {
+		float: right;
+		margin: 0 -12rem 1.5rem 1.5rem;
+		width: 25rem;
+	}
+
+	.figure-graphjs {
+		float: left;
+		margin: 0 1.5rem 0 -12rem;
+	}
+
+	.figure-screenshot-roll {
+		overflow-x: auto;
+		margin: 0 -12.625rem 0 -.625rem;
+	}
+
+	.figure-google {
+		float: left;
+		margin: 0 1.5rem 1.5rem -12rem;
+	}
+
+	.figure-tweetnest {
+		float: left;
+		margin: 0 1.5rem 1.5rem -12rem;
+	}
+
+	.figure-superdamn {
+		float: right;
+		margin: 0 -12rem 0 1.5rem;
+	}
+
+	.figure-pc-klinik {
+		float: left;
+		margin: .5rem 1.5rem 1.5rem -12rem;
 	}
 }
