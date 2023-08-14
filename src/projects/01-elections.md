@@ -1,4 +1,6 @@
-## Hosts on live election coverage on national TV used technology I created and oversaw a team develop
+## Hosts on national TV used technology I created to present live election results
+<!-- ## I created the technology used on national TV to present election results -->
+<!-- ## Hosts on live election coverage on national TV used technology I created and oversaw a team develop -->
 
 <p class="meta">2015, 2017, 2019, 2021, 2022</p>
 

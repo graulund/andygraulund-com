@@ -1,4 +1,4 @@
-## I'm currently the lead engineer for the website for radio and podcasts by the Danish Broadcast Corporation
+## I'm the tech lead for the website for national Danish radio and podcasts
 
 <div class="figure figure-dr-lyd">
 <div class="vimeo-container" style="padding-top:71.16%"><iframe src="https://player.vimeo.com/video/854012013?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
