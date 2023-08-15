@@ -89,6 +89,19 @@ code {
 	border-radius: 12px;
 }
 
+ul {
+	margin: 2.5rem 0;
+	padding: 0;
+
+	li {
+		margin: 0 0 .5rem;
+
+		&::marker {
+			color: var(--color-level-2);
+		}
+	}
+}
+
 .header-inner {
 	// display: flex;
 }
@@ -135,19 +148,6 @@ header {
 		background-color: var(--color-background-secondary);
 		padding: 2rem 0;
 		margin: 2rem 0;
-	}
-}
-
-ul {
-	margin: 2.5rem 0;
-	padding: 0;
-
-	li {
-		margin: 0 0 .5rem;
-
-		&::marker {
-			color: var(--color-level-2);
-		}
 	}
 }
 
