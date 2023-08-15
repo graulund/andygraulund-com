@@ -2,11 +2,11 @@
 
 <p class="meta">2019</p>
 
-<div class="figure figure-keys">
-	<img src="{{ '/assets/pkeys-screenshot.png' | url }}" alt="Screenshot of product" style="width: 100%" />
-</div>
+<figure class="figure figure-keys">
+	<img src="{{ '/assets/pkeys-screenshot.png' | url }}" alt="Screenshot of product" />
+</figure>
 
-Try it out!
+<!-- Try it out!
 
 <select name="musicalkey" id="musicalkey">
 	<option value="255">Select…</option>
@@ -123,3 +123,4 @@ Try it out!
 		<option value="182">B locrian</option>
 	</optgroup>
 </select>
+-->

@@ -1,10 +1,10 @@
 ## I'm the tech lead for the website for national Danish radio and podcasts
 
-<div class="figure figure-dr-lyd">
-<div class="vimeo-container" style="padding-top:71.16%"><iframe src="https://player.vimeo.com/video/854012013?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
-</div>
-
 <p class="meta">2020–present</p>
+
+<figure class="figure-dr-lyd">
+<div class="vimeo-container" style="padding-top:71.16%"><iframe src="https://player.vimeo.com/video/854012013?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
+</figure>
 
 I am the lead software engineer on the Danish Broadcasting Corporation's **[DR&nbsp;Lyd](https://www.dr.dk/lyd)**, the website on which you can listen to live radio and podcasts. I oversaw and executed a transition from the previous older website to **a modern Next.js/React-powered stack** that integrated well with the rest of the organization's technology.
 

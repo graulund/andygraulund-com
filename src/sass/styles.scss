@@ -1,6 +1,11 @@
 @use "sass:math";
 
-$mobile-width: 600px;
+$narrow-width-max: 40rem;
+$almost-narrow-width-max: 43.75rem;
+$wide-width-min: ($narrow-width-max + .0625rem);
+
+$page-width: 60rem;
+$gutter-width: 12rem;
 
 :root {
 	// --color-background: #1a1922;
@@ -34,10 +39,12 @@ body {
 	direction: ltr;
 	line-height: 1.6rem;
 
-	@media (max-width: $mobile-width) {
+	@media (max-width: $narrow-width-max) {
 		margin: 2.5rem 0 5rem;
 	}
 }
+
+// General
 
 h1, h2, h3 {
 	color: var(--color-level-1);
@@ -76,10 +83,12 @@ strong, a {
 a {
 	padding: 1px 0;
 	text-decoration: underline;
+	text-decoration-color: var(--color-level-4);
 }
 
 a:hover {
-	background-color: var(--color-background-secondary);
+	// background-color: var(--color-background-secondary);
+	text-decoration-color: var(--color-level-2);
 }
 
 code {
@@ -102,13 +111,24 @@ ul {
 	}
 }
 
-.header-inner {
-	// display: flex;
+.meta {
+	color: var(--color-level-4);
+	font-style: italic;
+	margin: -.75rem 0 1.125rem;
 }
 
+noscript {
+	display: block;
+	text-align: center;
+	border: 1px solid var(--color-level-4);
+	padding: 0.5rem;
+}
+
+// Header
+
 .face {
-	width: 10rem;
-	height: 10rem;
+	width: ($gutter-width - 2rem);
+	height: ($gutter-width - 2rem);
 	border-radius: 100%;
 	margin: 0 2rem 0 0;
 }
@@ -116,8 +136,14 @@ ul {
 header {
 	margin: 0 0 4rem;
 
-	@media (max-width: $mobile-width) {
+	@media (max-width: $narrow-width-max) {
 		margin-bottom: 2.5rem;
+	}
+
+	.header-inner {
+		@media (min-width: $wide-width-min) {
+			display: flex;
+		}
 	}
 
 	.fanfare {
@@ -126,19 +152,49 @@ header {
 		line-height: 1.25em;
 		margin: 1rem 0;
 
+		@media (min-width: $wide-width-min) {
+			font-size: 2.5rem;
+			margin: 1.25rem 0;
+		}
+
 		strong {
-			color: var(--color-level-1);
+			font-weight: normal;
+		}
+	}
+
+	.title {
+		@media (min-width: $wide-width-min) {
+			font-size: 1.125rem;
 		}
 	}
 }
+
+footer {
+	.footer-inner {
+		@media (min-width: $wide-width-min) {
+			margin-left: $gutter-width;
+		}
+	}
+
+	.signoff {
+		color: var(--color-level-4);
+		margin: 2rem 0 0;
+	}
+}
+
+// Content segments and containers
 
 .container {
 	max-width: 60rem;
 	margin: 0 auto;
 	padding: 0 5rem;
 
-	@media (max-width: $mobile-width) {
+	@media (max-width: $almost-narrow-width-max) {
 		margin: 0;
+		padding: 0 3.5rem;
+	}
+
+	@media (max-width: $narrow-width-max) {
 		padding: 0 2.5rem;
 	}
 }
@@ -150,6 +206,99 @@ header {
 		margin: 2rem 0;
 	}
 }
+
+.section {
+	@media (min-width: $wide-width-min) {
+		display: flex;
+
+		&-head {
+			flex: 0 0 ($gutter-width - 2rem);
+			margin: 0 2rem 0 0;
+
+			h2 {
+				position: sticky;
+				top: 2rem;
+			}
+		}
+
+		&-body {
+			flex: 1 0 0px;
+		}
+	}
+}
+
+// Figures
+
+figure {
+	margin: 0 0 2rem;
+	text-align: center;
+
+	/*
+	👉 "Non-main" figures are located in non-standard
+	   places, and are strictly for wider viewports.
+
+	👉 "Main" figures are located in a standard place,
+	   and is strictly for the narrower viewports which
+	   has a standard layout for each portfolio item.
+	*/
+
+	@media (max-width: $narrow-width-max) {
+		width: calc(100% + 5rem);
+		margin: 0 -2.5rem 2rem;
+
+		&.figure-non-main {
+			display: none;
+		}
+
+		&.figure-main {
+			display: block;
+		}
+	}
+
+	@media (min-width: $wide-width-min) {
+		margin: 0;
+
+		&.figure-main {
+			display: none;
+		}
+	}
+}
+
+figcaption {
+	color: var(--color-level-4);
+	margin: .5rem 0 1.5rem;
+	font-size: .875rem;
+	line-height: 1.5em;
+}
+
+// Portfolio
+
+.portfolio {
+	&-item {
+		clear: both;
+
+		@media (min-width: $wide-width-min) {
+			margin-left: $gutter-width;
+
+			&:nth-child(odd) {
+				margin-right: $gutter-width;
+				margin-left: 0;
+			}
+		}
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		line-height: 1.4em;
+		margin: 4rem 0 2rem;
+
+		@media (min-width: $wide-width-min) {
+			font-size: 2rem;
+		}
+	}
+}
+
+// Videos
 
 .video {
 	background-color: var(--color-background-secondary);
@@ -164,13 +313,7 @@ header {
 .vimeo-container {
 	position: relative;
 	padding-top: 56.25%;
-	// margin: 1rem 0;
-
-	@media (max-width: $mobile-width) {
-		width: calc(100% + 5rem);
-		padding-top: calc(56.25% + 0.5625 * 5rem);
-		margin: 0 -2.5rem;
-	}
+	margin: 0 auto;
 
 	> iframe {
 		position: absolute;
@@ -243,73 +386,149 @@ header {
 	opacity: 1;
 }
 
-.meta {
-	color: var(--color-level-4);
-	font-style: italic;
-	margin: -.75rem 0 1.125rem;
+// Rules for specific figures
+
+.figure-dr-lyd {
+	@media (min-width: $wide-width-min) {
+		float: right;
+		margin: -2.5rem -14rem 0 1.5rem;
+		width: 36rem;
+	}
 }
 
-// TODO: Maybe actually use figure?
-
-.figure {
-	margin: 0 0 2rem;
+.figure-elections {
+	@media (min-width: $wide-width-min) {
+		float: left;
+		margin: 0 1.5rem 1.5rem (-$gutter-width);
+		width: 36rem;
+	}
 }
 
 .figure-charts {
-	@media (max-width: $mobile-width) {
-		width: calc(100% + 5rem);
-		margin: 0 -2.5rem;
+	@media (min-width: $wide-width-min) {
+		max-width: 60rem;
+		margin-right: -$gutter-width;
 	}
 
 	figcaption {
-		@media (max-width: $mobile-width) {
+		@media (max-width: $narrow-width-max) {
 			margin: 0 2.5rem;
 		}
 	}
 }
 
-.figure-clip-manager {
-	position: relative;
-	max-width: 24rem;
-	// height: 23.5rem;
-	/* height: 0;
-	padding-top: 87.03%;
-	max-width: 27rem;
+.figure-epjb {
+	@media (min-width: $wide-width-min) {
+		float: left;
+		margin: 0 1.5rem 4rem -14rem;
+	}
+}
 
-	> img {
-		position: absolute;
-		top: 0;
-		left: 0;
-	} */
+.figure-fretboard {
+	@media (min-width: $wide-width-min) {
+		margin-right: -$gutter-width;
+	}
 
 	> img {
 		width: 100%;
 	}
+}
 
-	padding: 0 7% 12.9% 0;
+.figure-keys {
+	@media (min-width: $wide-width-min) {
+		margin-left: -$gutter-width;
+	}
 
-	.clip-manager-video {
-		position: absolute;
-		top: 40%;
-		left: 12.5%;
-		width: 87.73%;
-		box-shadow: 0 0 1rem rgba(37, 36, 48, .75);
+	> img {
+		width: 100%;
+	}
+}
+
+.figure-newsapp {
+	@media (min-width: $wide-width-min) {
+		float: right;
+		margin: 0 (-$gutter-width) 3.5rem 1.5rem;
+		width: 19rem;
+	}
+
+	> div {
+		max-width: 16rem;
+		padding-top: min(181.03%, calc(1.8103 * 16rem));
+
+		@media (min-width: $wide-width-min) {
+			max-width: none;
+			padding-top: 181.03%;
+		}
+	}
+}
+
+.figure-clip-manager {
+	overflow: hidden;
+
+	@media (min-width: $wide-width-min) {
+		float: left;
+		margin: 0 1.5rem 4rem -14rem;
+		overflow: hidden;
+	}
+
+	&-inner {
+		position: relative;
+		max-width: 24rem;
+		margin: 0 auto;
+		padding: 0 7% 19% 0;
+
+		> img {
+			width: 100%;
+		}
+
+		.clip-manager-video {
+			position: absolute;
+			top: 40%;
+			left: 12.5%;
+			width: 87.73%;
+			box-shadow: 0 0 1rem rgba(37, 36, 48, .75);
+		}
+	}
+}
+
+.figure-pyramid {
+	@media (min-width: $wide-width-min) {
+		float: right;
+		margin: 0 (-$gutter-width) 1.5rem 1.5rem;
+		width: 25rem;
+	}
+}
+
+.figure-graphjs {
+	@media (min-width: $wide-width-min) {
+		float: left;
+		margin: 0 1.5rem 0 (-$gutter-width);
+	}
+
+	> img {
+		width: 100%;
+		max-width: 17.5rem;
 	}
 }
 
 .figure-screenshot-roll {
-	overflow-x: scroll;
+	overflow-x: auto;
 
-	@media (max-width: $mobile-width) {
+	@media (max-width: $narrow-width-max) {
 		width: calc(100% + 5rem);
 		margin: 0 -2.5rem;
+	}
+
+	@media (min-width: $wide-width-min) {
+		overflow-x: visible;
+		margin: 0 -12.625rem 0 -.625rem;
 	}
 
 	> div {
 		display: flex;
 		width: 61.25rem;
 
-		@media (max-width: $mobile-width) {
+		@media (max-width: $narrow-width-max) {
 			margin: 0 1.875rem;
 		}
 	}
@@ -320,212 +539,41 @@ header {
 	}
 }
 
-.figure-graphjs {
-	width: 100%;
-	max-width: 17.5rem;
+.figure-google,
+.figure-tweetnest {
+	@media (min-width: $wide-width-min) {
+		float: left;
+		margin: 0 1.5rem 1.5rem (-$gutter-width);
+	}
 }
 
 .figure-tweetnest {
-	width: 100%;
-	max-width: 20rem;
+	> img {
+		width: 100%;
+		max-width: 20rem;
+	}
 }
 
 .figure-superdamn {
-	width: 100%;
-	max-width: 26.25rem;
+	@media (min-width: $wide-width-min) {
+		float: right;
+		margin: 0 (-$gutter-width) 0 1.5rem;
+	}
+
+	> img {
+		width: 100%;
+		max-width: 26.25rem;
+	}
 }
 
 .figure-pc-klinik {
-	width: 100%;
-	max-width: 21.875rem;
-}
-
-figure {
-	margin: 0;
-}
-
-figcaption {
-	color: var(--color-level-4);
-	margin: .5rem 0 1.5rem;
-	font-size: .875rem;
-	line-height: 1.5em;
-}
-
-noscript {
-	display: block;
-	text-align: center;
-	border: 1px solid var(--color-level-4);
-	padding: 0.5rem;
-}
-
-.signoff {
-	color: var(--color-level-4);
-	margin: 2rem 0 0;
-}
-
-// Needs cleanup
-
-.portfolio {
-	h2 {
-		font-size: 1.5rem;
-		line-height: 1.4em;
-		margin: 4rem 0 2rem;
-	}
-}
-
-@media (max-width: $mobile-width) {
-	.figure-non-main {
-		display: none;
-	}
-
-	.figure-main {
-		display: block;
-	}
-}
-
-@media (min-width: ($mobile-width + 1)) {
-	.header-inner {
-		display: flex;
-	}
-
-	.footer-inner {
-		margin-left: 12rem;
-	}
-
-	.figure-main {
-		display: none;
-	}
-
-	header {
-		.fanfare {
-			font-size: 2.5rem;
-			margin: 1.25rem 0;
-		}
-
-		.title {
-			font-size: 1.125rem;
-		}
-	}
-
-	.section {
-		display: flex;
-
-		&-head {
-			flex: 0 0 10rem;
-			margin: 0 2rem 0 0;
-
-			h2 {
-				position: sticky;
-				top: 2rem;
-			}
-		}
-
-		&-body {
-			flex: 1 0 0px;
-		}
-	}
-
-	.portfolio {
-		h2 {
-			font-size: 2rem;
-		}
-	}
-
-	.portfolio-item {
-		margin-left: 12rem;
-
-		&:nth-child(odd) {
-			margin-right: 12rem;
-			margin-left: 0;
-		}
-	}
-
-	.figure {
-		margin: 0;
-	}
-
-	.figure-dr-lyd {
-		float: right;
-		margin: -1.5rem -14rem 0 1.5rem;
-		width: 36rem;
-	}
-
-	.figure-elections {
+	@media (min-width: $wide-width-min) {
 		float: left;
-		margin: 0 1.5rem 1.5rem -12rem;
-		width: 36rem;
+		margin: .5rem 1.5rem 1.5rem (-$gutter-width);
 	}
 
-	.figure-charts {
-		max-width: 60rem;
-		margin-right: -12rem;
-	}
-
-	.figure-epjb {
-		float: left;
-		margin: 0 1.5rem 0 -14rem;
-	}
-
-	.figure-fretboard {
-		margin-right: -12rem;
-
-		img {
-			width: 100%;
-		}
-	}
-
-	.figure-keys {
-		margin-left: -12rem;
-	}
-
-	.figure-newsapp {
-		float: right;
-		margin: 0 -12rem 0 1.5rem;
-		width: 19rem;
-	}
-
-	.figure-clip-manager {
-		float: left;
-		position: relative;
-		margin: 0 1.5rem 0 -14rem;
-		// width: 27rem;
-		// height: 24rem;
-		overflow: hidden;
-	}
-
-	.figure-pyramid {
-		float: right;
-		margin: 0 -12rem 1.5rem 1.5rem;
-		width: 25rem;
-	}
-
-	.figure-graphjs {
-		float: left;
-		margin: 0 1.5rem 0 -12rem;
-	}
-
-	.figure-screenshot-roll {
-		overflow-x: auto;
-		margin: 0 -12.625rem 0 -.625rem;
-	}
-
-	.figure-google {
-		float: left;
-		margin: 0 1.5rem 1.5rem -12rem;
-	}
-
-	.figure-tweetnest {
-		float: left;
-		margin: 0 1.5rem 1.5rem -12rem;
-	}
-
-	.figure-superdamn {
-		float: right;
-		margin: 0 -12rem 0 1.5rem;
-	}
-
-	.figure-pc-klinik {
-		float: left;
-		margin: .5rem 1.5rem 1.5rem -12rem;
+	> img {
+		width: 100%;
+		max-width: 21.875rem;
 	}
 }
