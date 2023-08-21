@@ -1,11 +1,14 @@
 @use "sass:math";
 
-$narrow-width-max: 40rem;
-$almost-narrow-width-max: 43.75rem;
-$wide-width-min: ($narrow-width-max + .0625rem);
-
 $page-width: 60rem;
 $gutter-width: 12rem;
+
+$narrow-width-max: 40rem;
+$almost-narrow-width-max: 43.75rem;
+$wide-width-min: ($narrow-width-max + .01rem);
+$extra-wide-width-min: 55rem;
+$less-than-full-page-width-max: ($page-width + 9.99rem);
+$full-page-width-min: ($page-width + 10rem);
 
 :root {
 	// --color-background: #1a1922;
@@ -243,7 +246,7 @@ figure {
 	*/
 
 	@media (max-width: $narrow-width-max) {
-		width: calc(100% + 5rem);
+		width: 100vw;
 		margin: 0 -2.5rem 2rem;
 
 		&.figure-non-main {
@@ -252,6 +255,11 @@ figure {
 
 		&.figure-main {
 			display: block;
+		}
+
+		> img {
+			display: block;
+			margin: 0 auto;
 		}
 	}
 
@@ -292,7 +300,7 @@ figcaption {
 		line-height: 1.4em;
 		margin: 4rem 0 2rem;
 
-		@media (min-width: $wide-width-min) {
+		@media (min-width: $extra-wide-width-min) {
 			font-size: 2rem;
 		}
 	}
@@ -390,14 +398,26 @@ figcaption {
 
 .figure-dr-lyd {
 	@media (min-width: $wide-width-min) {
+		margin-right: -$gutter-width;
+	}
+
+	@media (min-width: $extra-wide-width-min) {
 		float: right;
 		margin: -2.5rem -14rem 0 1.5rem;
 		width: 36rem;
+	}
+
+	@media (max-width: $narrow-width-max) {
+		margin-bottom: 1.5rem;
 	}
 }
 
 .figure-elections {
 	@media (min-width: $wide-width-min) {
+		margin-left: -$gutter-width;
+	}
+
+	@media (min-width: $extra-wide-width-min) {
 		float: left;
 		margin: 0 1.5rem 1.5rem (-$gutter-width);
 		width: 36rem;
@@ -429,6 +449,10 @@ figcaption {
 		margin-right: -$gutter-width;
 	}
 
+	@media (max-width: $narrow-width-max) {
+		margin-bottom: 1.25rem;
+	}
+
 	> img {
 		width: 100%;
 	}
@@ -443,6 +467,10 @@ figcaption {
 .figure-keys {
 	@media (min-width: $wide-width-min) {
 		margin-left: -$gutter-width;
+	}
+
+	@media (max-width: $narrow-width-max) {
+		margin-bottom: 1.25rem;
 	}
 
 	> img {
@@ -484,9 +512,17 @@ figcaption {
 
 	&-inner {
 		position: relative;
-		max-width: 24rem;
+		max-width: 45vw;
 		margin: 0 auto;
 		padding: 0 7% 19% 0;
+
+		@media (min-width: $extra-wide-width-min) {
+			max-width: 24rem;
+		}
+
+		@media (max-width: $narrow-width-max) {
+			max-width: calc(100vw - 5rem);
+		}
 
 		> img {
 			width: 100%;
@@ -506,6 +542,10 @@ figcaption {
 	@media (min-width: $wide-width-min) {
 		float: right;
 		margin: 0 (-$gutter-width) 1.5rem 1.5rem;
+		width: 45vw;
+	}
+
+	@media (min-width: $extra-wide-width-min) {
 		width: 25rem;
 	}
 }
@@ -513,7 +553,7 @@ figcaption {
 .figure-graphjs {
 	@media (min-width: $wide-width-min) {
 		float: left;
-		margin: 0 1.5rem 0 (-$gutter-width);
+		margin: 0 1.5rem 1.5rem (-$gutter-width);
 	}
 
 	> img {
@@ -523,30 +563,119 @@ figcaption {
 }
 
 .figure-screenshot-roll {
-	overflow-x: auto;
+	position: relative;
+
+	@media (max-width: $less-than-full-page-width-max) {
+		width: 100vw;
+		margin: 0 -5rem;
+	}
+
+	@media (max-width: $almost-narrow-width-max) {
+		margin: 0 -3.5rem;
+	}
 
 	@media (max-width: $narrow-width-max) {
-		width: calc(100% + 5rem);
 		margin: 0 -2.5rem;
 	}
 
-	@media (min-width: $wide-width-min) {
+	@media (min-width: $full-page-width-min) {
 		overflow-x: visible;
 		margin: 0 -12.625rem 0 -.625rem;
 	}
 
 	> div {
+		overflow-x: auto;
+	}
+
+	> div > div {
 		display: flex;
 		width: 61.25rem;
 
+		@media (max-width: $less-than-full-page-width-max) {
+			padding: 0 4.375rem;
+		}
+
+		@media (max-width: $almost-narrow-width-max) {
+			padding: 0 2.875rem;
+		}
+
 		@media (max-width: $narrow-width-max) {
-			margin: 0 1.875rem;
+			padding: 0 1.875rem;
 		}
 	}
 
 	img {
 		flex: 0 0 25%;
 		width: 25%;
+	}
+
+	&::before,
+	&::after {
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		pointer-events: none;
+		opacity: .8;
+		background: transparent linear-gradient(
+			to right,
+			transparent 0%,
+			rgba(37, 36, 48, 0.013) 8.6%,
+			rgba(37, 36, 48, 0.049) 17.5%,
+			rgba(37, 36, 48, 0.104) 26.5%,
+			rgba(37, 36, 48, 0.175) 35.6%,
+			rgba(37, 36, 48, 0.259) 44.6%,
+			rgba(37, 36, 48, 0.352) 53.3%,
+			rgba(37, 36, 48, 0.45) 61.7%,
+			rgba(37, 36, 48, 0.55) 69.6%,
+			rgba(37, 36, 48, 0.648) 76.9%,
+			rgba(37, 36, 48, 0.741) 83.4%,
+			rgba(37, 36, 48, 0.825) 89%,
+			rgba(37, 36, 48, 0.896) 93.6%,
+			rgba(37, 36, 48, 0.951) 97.1%,
+			rgba(37, 36, 48, 0.987) 99.2%,
+			var(--color-background) 100%
+		);
+
+		@media (max-width: $less-than-full-page-width-max) {
+			display: block;
+			content: "";
+			width: 5rem;
+		}
+
+		@media (max-width: $almost-narrow-width-max) {
+			width: 3.5rem;
+		}
+
+		@media (max-width: $narrow-width-max) {
+			width: 2.5rem;
+		}
+	}
+
+	&::before {
+		left: 0;
+		right: auto;
+
+		background-image: linear-gradient(
+			to left,
+			transparent 0%,
+			rgba(37, 36, 48, 0.013) 8.6%,
+			rgba(37, 36, 48, 0.049) 17.5%,
+			rgba(37, 36, 48, 0.104) 26.5%,
+			rgba(37, 36, 48, 0.175) 35.6%,
+			rgba(37, 36, 48, 0.259) 44.6%,
+			rgba(37, 36, 48, 0.352) 53.3%,
+			rgba(37, 36, 48, 0.45) 61.7%,
+			rgba(37, 36, 48, 0.55) 69.6%,
+			rgba(37, 36, 48, 0.648) 76.9%,
+			rgba(37, 36, 48, 0.741) 83.4%,
+			rgba(37, 36, 48, 0.825) 89%,
+			rgba(37, 36, 48, 0.896) 93.6%,
+			rgba(37, 36, 48, 0.951) 97.1%,
+			rgba(37, 36, 48, 0.987) 99.2%,
+			var(--color-background) 100%
+		);
 	}
 }
 
@@ -571,9 +700,21 @@ figcaption {
 		margin: 0 (-$gutter-width) 0 1.5rem;
 	}
 
+	@media (max-width: $narrow-width-max) {
+		margin-bottom: 1.0625rem;
+	}
+
 	> img {
 		width: 100%;
-		max-width: 26.25rem;
+		max-width: 45vw;
+
+		@media (min-width: $extra-wide-width-min) {
+			max-width: 26.25rem;
+		}
+
+		@media (max-width: $narrow-width-max) {
+			max-width: min(calc(100vw - 3.75rem), 26.25rem);
+		}
 	}
 }
 
@@ -585,6 +726,14 @@ figcaption {
 
 	> img {
 		width: 100%;
-		max-width: 21.875rem;
+		max-width: 45vw;
+
+		@media (min-width: $extra-wide-width-min) {
+			max-width: 21.875rem;
+		}
+
+		@media (max-width: $narrow-width-max) {
+			max-width: min(calc(100vw - 5rem), 21.875rem);
+		}
 	}
 }
