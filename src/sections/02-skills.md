@@ -3,18 +3,15 @@ title: Skills
 ---
 
 ### Professional level
-* JavaScript
-* TypeScript
-* React
-* Node.js
-* Next.js
-* CSS
-* Sass
-* HTML
-* HLS.js
-* REST APIs
-* WebSockets
-* Git
+* JavaScript, TypeScript, Node.js
+* React, Next.js, HLS.js
+* CSS, Sass, HTML, etc.
+* REST APIs, WebSockets, Git
+* Working with big codebases and organizing code properly
+* Design and UX patterns
+* Communicating across disciplines (e.g. explaining technical topics to non-technicals)
+* Presenting and communicating to a broad audience (having been a podcast/radio host)
+* Making ideas happen within big companies (_in_-trepreneurship, creating prototypes, pitching)
 
 ### Very familiar with
 * PHP (Including modern development patterns)
@@ -24,11 +21,8 @@ title: Skills
 
 ### Familiar with
 * Electron
-* Objective-C
-* Python
-* Java
-* C++
-* C#
+* Objective-C, C#, C++
+* Python, Java
 
 <!--
 Modern web development patterns Repository/Service Pattern PSR-4 MVC
@@ -40,4 +34,3 @@ Sqlite
 
 * Native Danish speaker
 * Native-level English speaker (I've been mistaken for an American too many times...)
-
