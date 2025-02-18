@@ -10,4 +10,4 @@ I am the lead software engineer on the Danish Broadcasting Corporation's **[DR&n
 
 I authored nearly every line of code in the project: Interface code, audio/video player code, and a Node backend with integrations towards our APIs. Its success and stability made it the **first of many Next.js solutions** in the company. The product is key to the company mission in a space that is increasingly saturated by big budget competitors.
 
-As part of the project, we brought on a junior software engineer that I am a mentor for. It's been a joy to help develop internal talent, communicating central ideas such as modularizations, debuggability and reusability.
+As part of the project, we brought on a junior software engineer that **I am a mentor** for. It's been a joy to help develop internal talent, communicating central ideas such as modularizations, debuggability and reusability.

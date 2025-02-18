@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$page-width: 60rem;
+$page-width: 75rem;
 $gutter-width: 12rem;
 
 $narrow-width-max: 40rem;
@@ -188,7 +188,7 @@ footer {
 // Content segments and containers
 
 .container {
-	max-width: 60rem;
+	max-width: $page-width;
 	margin: 0 auto;
 	padding: 0 5rem;
 
@@ -426,7 +426,7 @@ figcaption {
 
 .figure-charts {
 	@media (min-width: $wide-width-min) {
-		max-width: 60rem;
+		max-width: $page-width;
 		margin-right: -$gutter-width;
 	}
 

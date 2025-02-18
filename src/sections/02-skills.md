@@ -12,6 +12,7 @@ title: Skills
 * Communicating across disciplines (e.g. explaining technical topics to non-technicals)
 * Presenting and communicating to a broad audience (having been a podcast/radio host)
 * Making ideas happen within big companies (_in_-trepreneurship, creating prototypes, pitching)
+* Mentoring and leading other engineers and reviewing their output
 
 ### Very familiar with
 * PHP (Including modern development patterns)
