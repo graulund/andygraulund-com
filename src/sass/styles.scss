@@ -7,6 +7,7 @@ $narrow-width-max: 40rem;
 $almost-narrow-width-max: 43.75rem;
 $wide-width-min: ($narrow-width-max + .01rem);
 $extra-wide-width-min: 55rem;
+$super-wide-width-min: 74rem;
 $less-than-full-page-width-max: ($page-width + 9.99rem);
 $full-page-width-min: ($page-width + 10rem);
 
@@ -32,7 +33,7 @@ $full-page-width-min: ($page-width + 10rem);
 }
 
 body {
-	margin: 4rem 0 10rem;
+	margin: 0 0 10rem;
 	background-color: var(--color-background);
 	color: var(--color-foreground);
 	font-size: 1rem;
@@ -43,7 +44,7 @@ body {
 	line-height: 1.6rem;
 
 	@media (max-width: $narrow-width-max) {
-		margin: 2.5rem 0 5rem;
+		margin: 0 0 5rem;
 	}
 }
 
@@ -59,6 +60,10 @@ h1 {
 	font-weight: normal;
 	color: var(--color-foreground);
 	margin: .75rem 0 1.25rem;
+
+	@media (min-width: $wide-width-min) {
+		font-size: 2.5rem;
+	}
 
 	strong {
 		color: var(--color-level-1);
@@ -137,15 +142,59 @@ noscript {
 }
 
 header {
+	--color-level-1: #000;
+	--color-level-2: rgba(0,0,0,.75);
+	--color-level-3: rgba(0,0,0,.5);
+	--color-level-4: rgba(0,0,0,.25);
+	--color-foreground: var(--color-level-3);
 	margin: 0 0 4rem;
+	background: #4eabc8 url(/assets/andy2024-expanded.jpg) no-repeat right top;
+	// background: #a7adbe url(/assets/andy2024-expanded-colored.jpg) no-repeat right top;
+	background-size: cover;
+	color: var(--color-foreground);
+	display: flex;
+	height: 75vh;
+	align-items: center;
+	min-height: fit-content;
+	max-height: 50rem;
+	padding: 3rem 0;
 
-	@media (max-width: $narrow-width-max) {
+	@media (prefers-reduced-motion: no-preference) {
+		animation: header-out linear both;
+		animation-timeline: view();
+		animation-range: exit 0% exit 100%;
+	}
+
+	@media
+		(max-width: #{$narrow-width-max + .625rem}),
+		(max-width: 52.5rem) and (min-height: 59.375rem),
+		(max-width: 45.625rem) and (min-height: 46.875rem)
+	{
+		height: 60vh;
 		margin-bottom: 2.5rem;
+		background-position: 70% 0;
+
+		@media (prefers-reduced-motion: no-preference) {
+			animation-name: narrow-header-out;
+		}
 	}
 
 	.header-inner {
 		@media (min-width: $wide-width-min) {
-			display: flex;
+			margin-right: max(17.5rem, min(30rem, 42vh));
+		}
+	}
+
+	h1 {
+		@media (max-width: $narrow-width-max) {
+			max-width: 65vw;
+		}
+	}
+
+	.fanfare,
+	.title {
+		@media (max-width: $narrow-width-max) {
+			max-width: 45vw;
 		}
 	}
 
@@ -160,15 +209,43 @@ header {
 			margin: 1.25rem 0;
 		}
 
+		@media (min-width: $super-wide-width-min) {
+			font-size: 3.5rem;
+		}
+
 		strong {
 			font-weight: normal;
 		}
 	}
 
 	.title {
+		line-height: 1.25em;
+
 		@media (min-width: $wide-width-min) {
 			font-size: 1.125rem;
 		}
+
+		@media (min-width: $super-wide-width-min) {
+			font-size: 1.5rem;
+		}
+	}
+
+	p {
+		@media (min-width: $super-wide-width-min) {
+			font-size: 1.25rem;
+		}
+	}
+}
+
+@keyframes header-out {
+	to {
+		background-position: right center;
+	}
+}
+
+@keyframes narrow-header-out {
+	to {
+		background-position: 70% 50%;
 	}
 }
 
@@ -284,8 +361,18 @@ figcaption {
 .portfolio {
 	&-item {
 		clear: both;
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
 
 		@media (min-width: $wide-width-min) {
+			margin-top: 8rem;
+			margin-bottom: 8rem;
 			margin-left: $gutter-width;
 
 			&:nth-child(odd) {
@@ -293,16 +380,46 @@ figcaption {
 				margin-left: 0;
 			}
 		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			&:not(:first-child) {
+				animation: fade-in linear both;
+				animation-timeline: view();
+				animation-range: entry 0% entry 100%;
+			}
+		}
 	}
 
 	h2 {
 		font-size: 1.5rem;
 		line-height: 1.4em;
-		margin: 4rem 0 2rem;
+		margin: 0 0 2rem;
+
+		/*
+		@media (prefers-reduced-motion: no-preference) {
+			background: transparent linear-gradient(
+				180deg,
+				var(--color-foreground) 0%,
+				var(--color-level-1) 35%,
+				75%,
+				var(--color-background) 100%
+			) repeat-x 0 100% fixed;
+			color: transparent;
+			background-clip: text;
+			-webkit-background-clip: text;
+		}
+		*/
 
 		@media (min-width: $extra-wide-width-min) {
-			font-size: 2rem;
+			font-size: 3rem;
 		}
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: scale(0.95) perspective(75em) rotateX(18deg);
 	}
 }
 
