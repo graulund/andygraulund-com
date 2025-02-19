@@ -2,7 +2,7 @@
 	<div class="vimeo-container"><iframe src="https://player.vimeo.com/video/854013767?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
 </figure>
 
-## I played a vital part in developing one of Denmark's most downloaded news apps
+## I played a vital part in developing one of Denmark's most downloaded news reading apps
 
 <p class="meta">2016–2019</p>
 
