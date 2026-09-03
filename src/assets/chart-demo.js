@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-	if (!window.createAndyCharts) {
+	if (!window.createAndyCharts || !document.querySelector(".andy-chart-root")) {
 		return;
 	}
 

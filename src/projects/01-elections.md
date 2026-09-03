@@ -12,8 +12,10 @@ One of the most critical missions of the Danish Broadcasting Corporation is the 
 
 Initially I was tasked to build an internal interface that TV producers use to **inspect, choose, and queue election results** to be displayed on the TV signal.
 
-Later, I had the lead engineering role in creating a **touch screen interface used in the TV show** by election experts to convey results. This effort required close collaboration with other teams, integration with experimental hardware, a deep understanding of the hosts’ individual needs — and working with an unmovable deadline.
+Later, I had the lead engineering role in creating a **touch screen interface used in the TV show** by election experts to convey results. This effort required close collaboration with other teams, integration with experimental hardware, and a deep understanding of the hosts’ individual needs — all while working with an unmovable deadline.
 
 Finally, I transitioned from a hands-on role to a **directing role**, overseeing a team of engineers refine the product, and acting as a communication pathway with stakeholders.
 
 The election night TV coverages were regularly highly praised, and the latest one peaked at [over 700,000 viewers](https://www.dr.dk/om-dr/nyheder/drs-valgdaekning-er-blevet-fulgt-flittigt-og-25-millioner-har-nu-taget-kandidattesten) at a moment the exit poll was revealed — something that was done using our technology.
+
+<a href="/elections">Read more about this project (with photos) &rarr;</a>
