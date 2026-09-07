@@ -10,6 +10,9 @@ $extra-wide-width-min: 55rem;
 $less-than-full-page-width-max: ($page-width + 9.99rem);
 $full-page-width-min: ($page-width + 10rem);
 
+$font-family-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-display: "SF Pro Display", $font-family-system;
+
 :root {
 	// --color-background: #1a1922;
 	--color-background: #252430;
@@ -36,7 +39,7 @@ body {
 	background-color: var(--color-background);
 	color: var(--color-foreground);
 	font-size: 1rem;
-	font-family: "SF Pro Display", "SF Pro Icons", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-family: $font-family-system;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	direction: ltr;
@@ -49,7 +52,8 @@ body {
 
 // General
 
-h1, h2, h3 {
+h1, h2, h3, .fanfare {
+	font-family: $font-family-display;
 	color: var(--color-level-1);
 }
 
