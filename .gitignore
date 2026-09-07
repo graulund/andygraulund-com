@@ -134,3 +134,5 @@ dist
 public/
 src/assets/andys-charts/
 src/assets/*.mp4
+.serena/
+
